@@ -1,0 +1,62 @@
+Para los siguientes segmentos de código en lenguaje ensambladores determine como se
+definen la estructura de datos nodo 
+
+Determine how to define the data structure nodo (nodo has 4 variables)
+
+(a)
+<+4>: push %r12
+<+6>: push %rbp
+<+7>: push %rbx
+<+8>: mov %rdi,%rbx
+<+11>: mov %ecx,%r12d
+<+14>: movq %xmm0,%rbp
+<+19>: mov %edx,0x10(%rdi)
+<+22>: mov $0x10,%edx
+<+27>: call 0x1080 <__strcpy_chk@plt>
+<+32>: mov %r12b,0x14(%rbx)
+<+36>: mov %rbp,0x18(%rbx)
+<+40>: pop %rbx
+<+41>: pop %rbp
+<+42>: pop %r12
+<+44>: ret
+(b)
+<+4>: push %r12
+<+6>: push %rbp
+<+7>: push %rbx
+<+8>: mov %rdi,%rbx
+<+11>: mov %ecx,%r12d
+<+14>: movq %xmm0,%rbp
+<+19>: mov %edx,0x4(%rdi)
+<+22>: lea 0x8(%rdi),%rdi
+<+26>: mov $0x10,%edx
+<+31>: call 0x1080 <__strcpy_chk@plt>
+<+36>: mov %r12b,(%rbx)
+<+39>: mov %rbp,0x18(%rbx)
+<+43>: pop %rbx
+<+44>: pop %rbp
+<+45>: pop %r12
+<+47>: ret
+
+Answer: (nodo has 4 variables, an integer, a string, a character and a double)
+
+(a)
+
+struct nodo {
+    int a;
+    char b[16];
+    char c;
+    double d;
+};
+
+(b)
+
+struct nodo {
+    char a;
+    int b;
+    char c[16];
+    double d;
+};
+
+
+
+    
