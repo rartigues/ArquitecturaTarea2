@@ -50,7 +50,7 @@ $ ./misterio1.exe
 +------------------------+
 |   El valor retornado   |
 +------------------------+
-| El segundo argumento   |
+|  El segundo argumento  |
 +------------------------+
 |    Primer argumento    |
 +------------------------+
